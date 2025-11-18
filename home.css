@@ -1,0 +1,38 @@
+/* small custom styles extracted from home.html */
+.glass { background: rgba(255,255,255,0.6); backdrop-filter: blur(6px); }
+.hero-overlay { background: linear-gradient(180deg, rgba(0,0,0,0.18), rgba(0,0,0,0.4)); }
+/* simple slide transition */
+.slide { transition: opacity 0.7s ease-in-out, transform 0.7s ease-in-out; }
+.hidden-clip { clip-path: inset(0 0 100% 0); }
+
+/* Ensure form controls have white background and black text for readability */
+input, textarea, select {
+	background: #ffffff !important;
+	color: #000000 !important;
+	border-color: #e6e6e6;
+}
+
+input::placeholder, textarea::placeholder {
+	color: #6b7280; /* slightly muted placeholder */
+}
+
+/* Keep date inputs consistent */
+input[type="date"] {
+	background: #ffffff !important;
+}
+
+/* Specifically target the booking form and the note textarea to ensure white background */
+#booking input,
+#booking select,
+#booking textarea,
+#booking input::placeholder,
+#booking textarea::placeholder {
+	background: #ffffff !important;
+	color: #000000 !important;
+}
+
+/* slightly muted placeholders inside booking form */
+#booking input::placeholder,
+#booking textarea::placeholder {
+	color: #6b7280 !important;
+}

@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bengkel Optima — Service & Perbaikan Mobil</title>
+  <meta name="description" content="Bengkel Optima - service mesin, body & cat, ganti oli, spareparts. Booking online, galeri hasil kerja, dan promo." />
+  <!-- Tailwind CDN (for quick prototyping) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="home.css">
+</head>
+<body class="antialiased text-slate-900 bg-gradient-to-b from-slate-50 to-slate-100">
+  <!-- Top bar -->
+  <div class="bg-slate-900 text-slate-100 text-sm">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-4 py-2">
+      <div class="flex items-center gap-4">
+        <span class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M2 16.5V21h4.5L21 6.5l-4.5-4.5L2 16.5z" stroke="#fff" stroke-width="1.2" stroke-linejoin="round"/></svg> +62 878-0962-8296</span>
+        <span class="hidden sm:inline-flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 2v6l4 2" stroke="#fff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg> Senin - Sabtu 08:00 - 18:00</span>
+      </div>
+      <div class="hidden sm:flex items-center gap-4">
+        <a href="#services" class="hover:underline">Layanan</a>
+        <a href="#parts" class="hover:underline">Spareparts</a>
+        <a href="#gallery" class="hover:underline">Galeri</a>
+        <a href="#booking" class="hover:underline">Booking</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header / Nav -->
+  <header class="sticky top-0 z-40 bg-white shadow">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-3">
+        <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-amber-400 to-orange-600 flex items-center justify-center text-white shadow-lg">
+          <img src="./src/logo.png" alt="Bengkel Optima logo" class="w-6 h-6 object-contain" />
+        </div>
+        <div>
+          <h1 class="text-lg font-bold leading-4">Bengkel Optima</h1>
+          <p class="text-xs text-slate-500">Service • Body • Spareparts</p>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="#home" class="hover:text-amber-600">Beranda</a>
+
+        <!-- Mega menu -->
+        <div class="relative group">
+          <button class="flex items-center gap-2">Layanan
+            <svg width="14" height="14" viewBox="0 0 24 24" class="transform group-hover:rotate-180 transition-transform" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+
+          <div class="absolute left-0 top-full mt-3 w-[820px] bg-white rounded-2xl shadow-2xl p-6 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+            <div class="grid grid-cols-3 gap-6">
+              <div>
+                <h4 class="font-semibold">Perbaikan Mesin</h4>
+                <ul class="mt-3 text-sm text-slate-600 space-y-2">
+                  <li>Diagnostik & Tune-Up</li>
+                  <li>ECU Scan</li>
+                  <li>Overhaul Mesin</li>
+                  <li>Turbo Service</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-semibold">Body & Cat</h4>
+                <ul class="mt-3 text-sm text-slate-600 space-y-2">
+                  <li>Perbaikan Body</li>
+                  <li>Cat Full-Respray</li>
+                  <li>Polish & Nano Coating</li>
+                  <li>Perbaikan Frame</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-semibold">Servis Rutin & Spareparts</h4>
+                <ul class="mt-3 text-sm text-slate-600 space-y-2">
+                  <li>Ganti Oli & Filter</li>
+                  <li>Rem & Kopling</li>
+                  <li>Ban & Velg</li>
+                  <li>Spareparts Original</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="mt-5 border-t pt-4 flex items-center justify-between">
+              <p class="text-sm text-slate-500">Promo bulan ini: Tune-up + Ganti Oli <span class="font-semibold text-amber-600">Rp 350.000</span></p>
+              <a href="#booking" class="inline-flex items-center gap-2 bg-amber-500 text-white px-4 py-2 rounded-lg">Booking Sekarang</a>
+            </div>
+          </div>
+        </div>
+
+        <a href="#parts" class="hover:text-amber-600">Spareparts</a>
+        <a href="#gallery" class="hover:text-amber-600">Galeri</a>
+        <a href="#blog" class="hover:text-amber-600">Tips & Blog</a>
+        <a href="#careers" class="hover:text-amber-600">Karir</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <button id="searchBtn" class="hidden md:inline-flex items-center gap-2 border px-3 py-2 rounded-lg">Cari</button>
+        <a href="./cart.html" class="inline-flex items-center gap-2 border px-3 py-2 rounded-lg">Keranjang</a>
+        <button id="mobileBtn" class="md:hidden p-2 rounded-md border">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="md:hidden hidden border-t bg-white">
+      <div class="px-4 py-4 space-y-3">
+        <a href="#services" class="block">Layanan</a>
+        <a href="#parts" class="block">Spareparts</a>
+        <a href="#gallery" class="block">Galeri</a>
+        <a href="#booking" class="block">Booking</a>
+        <a href="#contact" class="block">Kontak</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero / Slideshow -->
+  <main class="max-w-7xl mx-auto px-4 py-8">
+    <section id="home" class="relative rounded-2xl overflow-hidden shadow-2xl">
+      <div class="relative h-[460px] lg:h-[560px]">
+        <!-- slides -->
+        <div class="absolute inset-0">
+          <img id="slideImg" src="./src/photo-1511919884226-fd3cad34687c.avif" alt="slide" class="object-cover w-full h-full" />
+          <div class="absolute inset-0 hero-overlay"></div>
+        </div>
+
+        <!-- overlay content -->
+        <div class="absolute left-6 bottom-12 max-w-xl">
+          <h2 id="slideTitle" class="text-3xl md:text-5xl font-extrabold text-white drop-shadow">Servis Mesin & Tune-Up</h2>
+          <p id="slideSubtitle" class="mt-3 text-white/90 max-w-lg">Perawatan lengkap agar performa mesin kembali optimal. Teknisi ahli & peralatan modern.</p>
+          <div class="mt-6 flex gap-3">
+            <a href="#booking" class="inline-flex items-center gap-2 bg-amber-500 text-white px-4 py-2 rounded-xl shadow-lg">Booking Sekarang</a>
+            <a href="#services" class="inline-flex items-center gap-2 border border-white/30 text-white px-4 py-2 rounded-xl">Lihat Layanan</a>
+          </div>
+        </div>
+
+        <!-- controls -->
+        <button id="prevBtn" class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 p-2 rounded-full shadow">‹</button>
+        <button id="nextBtn" class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 p-2 rounded-full shadow">›</button>
+
+        <div class="absolute left-1/2 -translate-x-1/2 bottom-6 flex gap-2">
+          <button data-index="0" class="w-10 h-2 rounded-full bg-amber-500"></button>
+          <button data-index="1" class="w-10 h-2 rounded-full bg-white/60"></button>
+          <button data-index="2" class="w-10 h-2 rounded-full bg-white/60"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick services -->
+    <section id="services" class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+      <article class="bg-white rounded-2xl p-6 shadow hover:shadow-2xl transition">
+        <div class="flex items-center gap-3">
+          <div class="w-12 h-12 rounded-lg bg-amber-50 flex items-center justify-center text-amber-600">🔧</div>
+          <div>
+            <h4 class="font-semibold">Tune-Up & Diagnostik</h4>
+            <p class="text-sm text-slate-600">Engine check, ECU scan, perbaikan ringan</p>
+          </div>
+        </div>
+        <div class="mt-4 flex items-center justify-between">
+          <div class="text-slate-700 font-semibold">Mulai Rp 150.000</div>
+          <button class="text-amber-600 bg-none border-none cursor-pointer hover:underline inline-flex">Detail</button>
+        </div>
+      </article>
+
+      <article class="bg-white rounded-2xl p-6 shadow hover:shadow-2xl transition">
+        <div class="flex items-center gap-3">
+          <div class="w-12 h-12 rounded-lg bg-amber-50 flex items-center justify-center text-amber-600">🎨</div>
+          <div>
+            <h4 class="font-semibold">Body & Cat</h4>
+            <p class="text-sm text-slate-600">Perbaikan body, penggantian panel, cat</p>
+          </div>
+        </div>
+        <div class="mt-4 flex items-center justify-between">
+          <div class="text-slate-700 font-semibold">Mulai Rp 800.000</div>
+          <button class="text-amber-600 bg-none border-none cursor-pointer hover:underline inline-flex">Detail</button>
+        </div>
+      </article>
+
+      <article class="bg-white rounded-2xl p-6 shadow hover:shadow-2xl transition">
+        <div class="flex items-center gap-3">
+          <div class="w-12 h-12 rounded-lg bg-amber-50 flex items-center justify-center text-amber-600">🛢️</div>
+          <div>
+            <h4 class="font-semibold">Ganti Oli & Filter</h4>
+            <p class="text-sm text-slate-600">Oli berkualitas, service cepat</p>
+          </div>
+        </div>
+        <div class="mt-4 flex items-center justify-between">
+          <div class="text-slate-700 font-semibold">Mulai Rp 120.000</div>
+          <button class="text-amber-600 bg-none border-none cursor-pointer hover:underline inline-flex">Detail</button>
+        </div>
+      </article>
+    </section>
+
+    <!-- About & Booking -->
+    <section class="mt-10 grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+      <div class="lg:col-span-2 bg-white rounded-2xl p-6 shadow">
+        <h3 class="text-2xl font-semibold">Kenapa Memilih Bengkel Optima?</h3>
+        <p class="mt-3 text-slate-600">Teknisi berpengalaman, peralatan modern, suku cadang resmi, dan garansi kerja. Kami merawat mobil Anda seolah mobil kami sendiri.</p>
+
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="bg-amber-50 p-4 rounded-xl">
+            <h5 class="font-semibold">Teknisi Bersertifikat</h5>
+            <p class="text-sm text-slate-600">Training & sertifikasi</p>
+          </div>
+          <div class="bg-amber-50 p-4 rounded-xl">
+            <h5 class="font-semibold">Peralatan Modern</h5>
+            <p class="text-sm text-slate-600">Diagnostic tools, hydraulic lifts</p>
+          </div>
+          <div class="bg-amber-50 p-4 rounded-xl">
+            <h5 class="font-semibold">Garansi 30 Hari</h5>
+            <p class="text-sm text-slate-600">Kepuasan & keamanan</p>
+          </div>
+        </div>
+
+        <div class="mt-6">
+          <h4 class="font-semibold">Testimoni</h4>
+          <blockquote class="mt-3 border-l-4 pl-4 italic text-slate-700">"Layanan cepat dan hasil catnya rapi — recommended!" — Ibu Rina</blockquote>
+        </div>
+      </div>
+
+      <aside class="bg-white rounded-2xl p-6 shadow">
+        <h4 class="font-semibold">Booking Cepat</h4>
+        <p class="text-sm text-slate-500 mt-2">Pilih layanan, tanggal, dan kami konfirmasi via WhatsApp.</p>
+        <form id="booking" class="mt-4 space-y-3">
+          <select class="w-full border rounded-lg px-3 py-2 bg-white" required>
+            <option value="">-- Pilih Layanan --</option>
+            <option value="tuneup">Tune-Up</option>
+            <option value="oli">Ganti Oli</option>
+            <option value="body">Body & Cat</option>
+          </select>
+          <input class="w-full border rounded-lg px-3 py-2 bg-white" placeholder="Nama" required>
+          <input class="w-full border rounded-lg px-3 py-2 bg-white" placeholder="No. HP" required>
+          <input type="date" class="w-full border rounded-lg px-3 py-2 bg-white" required>
+          <button type="submit" class="w-full bg-amber-500 text-white px-4 py-2 rounded-lg">Kirim Permintaan</button>
+        </form>
+
+        <div class="mt-6 border-t pt-4">
+          <p class="text-sm text-slate-500">Alamat</p>
+          <p class="text-sm font-medium">Jalan Raya No. 123, Kota Contoh</p>
+          <a class="mt-2 inline-flex items-center gap-2 text-amber-600" href="#contact">Lihat di peta</a>
+        </div>
+      </aside>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" class="mt-12">
+      <h3 class="text-xl font-semibold">Galeri Pekerjaan Kami</h3>
+      <div class="mt-4 grid grid-cols-2 md:grid-cols-4 gap-3">
+        <!-- placeholder images -->
+        <img src="./src/photo-1511919884226-fd3cad34687c.avif" alt="galeri-1" class="rounded-lg object-cover w-full h-40 shadow" />
+        <img src="./src/WhatsApp Image 2025-11-10 at 22.04.25_2ac83e87.jpg" alt="galeri-2" class="rounded-lg object-cover w-full h-40 shadow" />
+        <img src="./src/WhatsApp Image 2025-11-10 at 22.04.25_3c2561c5.jpg" alt="galeri-3" class="rounded-lg object-cover w-full h-40 shadow" />
+        <img src="./src/WhatsApp Image 2025-11-10 at 22.04.25_5e70bd1f.jpg" alt="galeri-4" class="rounded-lg object-cover w-full h-40 shadow" />
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="parts" class="mt-12">
+      <h3 class="text-xl font-semibold">Harga & Spareparts</h3>
+      <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-2xl p-6 shadow">
+          <h4 class="font-semibold">Tune-Up Standard</h4>
+          <div class="mt-2 text-2xl font-bold">Rp 350.000</div>
+          <ul class="mt-3 text-sm text-slate-600 space-y-1">
+            <li>• Diagnostik ECU</li>
+            <li>• Ganti busi (jika perlu)</li>
+          </ul>
+          <div class="mt-4">
+            <button class="inline-flex items-center gap-2 bg-amber-500 text-white px-3 py-2 rounded-lg cursor-pointer hover:bg-amber-600">Pesan Sekarang</button>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 shadow">
+          <h4 class="font-semibold">Ganti Oli & Filter</h4>
+          <div class="mt-2 text-2xl font-bold">Rp 120.000</div>
+          <ul class="mt-3 text-sm text-slate-600 space-y-1">
+            <li>• Oli mineral / semi</li>
+            <li>• Filter oli resmi</li>
+          </ul>
+          <div class="mt-4">
+            <button class="inline-flex items-center gap-2 bg-amber-500 text-white px-3 py-2 rounded-lg cursor-pointer hover:bg-amber-600">Pesan Sekarang</button>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 shadow">
+          <h4 class="font-semibold">Perbaikan Body</h4>
+          <div class="mt-2 text-2xl font-bold">Mulai Rp 800.000</div>
+          <ul class="mt-3 text-sm text-slate-600 space-y-1">
+            <li>• Estimasi setelah cek</li>
+            <li>• Garansi kerja 30 hari</li>
+          </ul>
+          <div class="mt-4">
+            <button class="inline-flex items-center gap-2 bg-amber-500 text-white px-3 py-2 rounded-lg cursor-pointer hover:bg-amber-600">Pesan Sekarang</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog -->
+    <section id="blog" class="mt-12 grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div class="lg:col-span-2 bg-white p-6 rounded-2xl shadow">
+        <h3 class="text-lg font-semibold">Artikel Terbaru</h3>
+        <article class="mt-4">
+          <h4 class="font-semibold">Cara Menjaga Performa Mesin di Musim Hujan</h4>
+          <p class="mt-2 text-slate-600 text-sm">Tips singkat agar mobil tetap prima saat sering jalan di genangan air...</p>
+        </article>
+      </div>
+
+      <aside class="bg-white p-6 rounded-2xl shadow">
+        <h4 class="font-semibold">Subscribe</h4>
+        <p class="text-sm text-slate-500 mt-2">Dapatkan promo dan tips perawatan langsung ke email.</p>
+        <div class="mt-3 flex gap-2">
+          <input class="flex-1 border rounded-lg px-3 py-2" placeholder="Email Anda" />
+          <button class="bg-amber-500 text-white px-3 py-2 rounded-lg">Ikuti</button>
+        </div>
+      </aside>
+    </section>
+
+    <!-- Contact & Map -->
+    <section id="contact" class="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div class="bg-white p-6 rounded-2xl shadow">
+        <h3 class="text-lg font-semibold">Hubungi Kami</h3>
+        <p class="text-sm text-slate-500 mt-2">Customer service siap membantu untuk booking & pertanyaan teknis.</p>
+        <div class="mt-4 space-y-3 text-sm">
+          <p class="flex items-center gap-2">📞 +62 878-0962-8296</p>
+          <p class="flex items-center gap-2">✉️ cs@bengkeloptima.example</p>
+          <p class="flex items-center gap-2">📍 Jalan Raya No. 123, Kota Contoh</p>
+        </div>
+
+        <form class="mt-4 grid grid-cols-1 gap-3">
+          <input class="border rounded-lg px-3 py-2" placeholder="Nama" />
+          <input class="border rounded-lg px-3 py-2" placeholder="Email" />
+          <textarea class="border rounded-lg px-3 py-2" placeholder="Pesan" rows="4"></textarea>
+          <button class="bg-slate-900 text-white px-4 py-2 rounded-lg">Kirim Pesan</button>
+        </form>
+      </div>
+
+      <div class="rounded-2xl overflow-hidden shadow">
+        <iframe title="lokasi" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3958.123456789012!2d106.816666!3d-6.200000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5fa2a0a0a0%3A0x1234567890abcdef!2sJakarta!5e0!3m2!1sid!2sid!4v0000000000" width="100%" height="100%" class="min-h-[300px]" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="mt-12 bg-slate-900 text-slate-100 rounded-2xl p-6">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div>
+          <h5 class="font-bold">Bengkel Optima</h5>
+          <p class="text-sm mt-2">Service & perbaikan mobil — berkualitas dan cepat.</p>
+        </div>
+        <div>
+          <h6 class="font-semibold">Layanan</h6>
+          <ul class="mt-2 text-sm">
+            <li>Tune-Up</li>
+            <li>Ganti Oli</li>
+            <li>Body & Cat</li>
+          </ul>
+        </div>
+        <div>
+          <h6 class="font-semibold">Kontak</h6>
+          <p class="text-sm mt-2">+62 878-0962-8296</p>
+          <p class="text-sm">cs@bengkeloptima.example</p>
+        </div>
+      </div>
+
+      <div class="mt-6 text-center text-sm text-slate-400">© 2025 Bengkel Optima — All rights reserved.</div>
+    </footer>
+  </main>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>

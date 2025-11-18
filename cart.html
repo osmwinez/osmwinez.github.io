@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Keranjang - Bengkel Optima</title>
+  <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Keranjang Belanja</h1>
+
+    <section class="cart-wrapper">
+      <div class="cart-list" id="cartList">
+        <!-- cart items inserted here -->
+      </div>
+
+      <aside class="cart-summary">
+        <h2>Ringkasan Pesanan</h2>
+        <div class="summary-row"><span>Subtotal</span><span id="subtotal">Rp 0</span></div>
+        <div class="summary-row"><span>Biaya Pengiriman</span><span id="shipping">Rp 0</span></div>
+        <div class="summary-row total"><span>Total</span><span id="total">Rp 0</span></div>
+
+        <form id="checkoutForm">
+          <label>Nama
+            <input type="text" id="custName" placeholder="Nama lengkap" required />
+          </label>
+          <label>Nomor HP (WA, tanpa +)
+            <input type="tel" id="custPhone" placeholder="62812..." required />
+          </label>
+          <label>Catatan (opsional)
+            <textarea id="note" rows="3" placeholder="Contoh: Mohon cek oli dan filter"></textarea>
+          </label>
+
+          <button type="submit" class="btn primary" id="orderBtn">Pesan via WhatsApp</button>
+        </form>
+
+        <div class="actions">
+          <button id="clearBtn" class="btn">Kosongkan Keranjang</button>
+          <button id="sampleBtn" class="btn">Tambah Item Contoh</button>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <script src="cart.js"></script>
+</body>
+</html>
